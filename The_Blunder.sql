@@ -16,3 +16,10 @@ INSERT INTO @tbl_Employees VALUES(4,'Maria',3000)
 
 
 SELECT CAST(CEILING(AVG(CAST(Salary AS decimal(18,2)))- AVG(CAST(REPLACE(Salary,0,'') AS decimal(18,2)))) AS INT) AS ErrAmount FROM @tbl_Employees
+/*
+HackerRank Submission
+----------------------
+SELECT CAST(CEILING(AVG(CAST(Salary AS decimal(18,2)))- AVG(CAST(REPLACE(Salary,0,'') AS decimal(18,2)))) AS INT) 
+AS ErrAmount FROM Employees
+
+*/
