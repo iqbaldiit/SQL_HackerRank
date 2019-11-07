@@ -68,6 +68,19 @@ LEFT JOIN @tbl_Senior_Manager AS SM ON Emp.company_code=SM.company_code AND LM.l
 LEFT JOIN @tbl_Manager AS M ON Emp.company_code=M.company_code AND LM.lead_manager_code=M.lead_manager_code AND SM.senior_manager_code=M.senior_manager_code
 GROUP BY Emp.company_code,Com.founder ORDER BY Emp.company_code
 
+/*
+HackerRank Submission
+----------------------
+SELECT Emp.company_code,Com.founder,COUNT(DISTINCT LM.lead_manager_code),COUNT( DISTINCT SM.senior_manager_code),COUNT(DISTINCT M.manager_code),COUNT( DISTINCT Emp.employee_code) 
+FROM Employee Emp
+LEFT JOIN Company AS Com ON Emp.company_code=Com.company_code
+LEFT JOIN Lead_Manager AS LM ON Emp.company_code=LM.company_code
+LEFT JOIN Senior_Manager AS SM ON Emp.company_code=SM.company_code AND LM.lead_manager_code=SM.lead_manager_code
+LEFT JOIN Manager AS M ON Emp.company_code=M.company_code AND LM.lead_manager_code=M.lead_manager_code AND SM.senior_manager_code=M.senior_manager_code
+GROUP BY Emp.company_code,Com.founder ORDER BY Emp.company_code
+
+*/
+
 --SELECT * FROM @tbl_Employee
 
 
